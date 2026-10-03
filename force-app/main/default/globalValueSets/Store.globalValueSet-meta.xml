@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Lausanne</fullName>
+        <default>false</default>
+        <label>Lausanne</label>
+    </customValue>
+    <customValue>
+        <fullName>Bern</fullName>
+        <default>false</default>
+        <label>Bern</label>
+    </customValue>
+    <customValue>
+        <fullName>Lyon</fullName>
+        <default>false</default>
+        <label>Lyon</label>
+    </customValue>
+    <customValue>
+        <fullName>Munich</fullName>
+        <default>false</default>
+        <label>Munich</label>
+    </customValue>
+    <description>The Northgrade Cycles stores. Shared by User.Store__c, Contact.Home_Store__c and Store_Appointment__c.Store__c.</description>
+    <masterLabel>Store</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

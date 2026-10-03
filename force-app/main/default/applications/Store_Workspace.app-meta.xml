@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Store_Workspace_Home</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#1B2A3A</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Daily app of the store sales associates: My Day briefing, customers, appointments, orders and tasks, with the Staff Assistant in the Agentforce panel.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Store Workspace</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>My_Day_Briefing</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Store_Appointment__c</tabs>
+    <tabs>standard-Order</tabs>
+    <tabs>standard-Task</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

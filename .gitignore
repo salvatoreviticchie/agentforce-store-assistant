@@ -1,0 +1,23 @@
+# Salesforce CLI / DX
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+**/lwc/jsconfig.json
+**/aura/jsconfig.json
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+*.log
+node_modules/
+coverage/
+
+# Generated on publish (org-specific)
+force-app/main/default/bots/
+force-app/main/default/genAiPlannerBundles/
+
+# Personal notes (not for GitHub)
+HANDOFF_PROMPT.md
+*_PROMPT.md

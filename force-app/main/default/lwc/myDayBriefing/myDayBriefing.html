@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="My Day" icon-name="standard:today">
+        <lightning-button-icon slot="actions" icon-name="utility:refresh" alternative-text="Refresh"
+            title="Refresh" onclick={handleRefresh} disabled={busy}></lightning-button-icon>
+
+        <div class="slds-p-horizontal_medium">
+            <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">{subtitle}</p>
+
+            <template lwc:if={loading}>
+                <lightning-spinner alternative-text="Preparing your day" size="small"></lightning-spinner>
+            </template>
+            <template lwc:if={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+            <template lwc:if={message}>
+                <p class="slds-text-body_regular">{message}</p>
+            </template>
+
+            <template for:each={sections} for:item="section">
+                <section key={section.key} class={section.cssClass}>
+                    <h2 class="slds-text-title_caps slds-m-bottom_x-small">
+                        {section.title}
+                        <lightning-badge label={section.count} class="slds-m-left_x-small"></lightning-badge>
+                    </h2>
+                    <ul>
+                        <template for:each={section.items} for:item="item">
+                            <li key={item.key} class="item">
+                                <div class="item-head">
+                                    <span class="priority">{item.priority}</span>
+                                    <span lwc:if={item.timeLabel} class="when">{item.timeLabel}</span>
+                                    <a href="#" data-id={item.recordId} onclick={handleOpenRecord} class="headline">{item.headline}</a>
+                                </div>
+                                <ul lwc:if={item.details.length} class="details">
+                                    <template for:each={item.details} for:item="detail">
+                                        <li key={detail.key}>{detail.text}</li>
+                                    </template>
+                                </ul>
+                                <ul lwc:if={item.tasks.length} class="details">
+                                    <template for:each={item.tasks} for:item="task">
+                                        <li key={task.taskId} class="linked-task">
+                                            <span>Open task: {task.subject}</span>
+                                            <lightning-button variant="base" label="Done" data-id={task.taskId}
+                                                onclick={handleDone} disabled={busy}></lightning-button>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <div class="item-actions">
+                                    <lightning-button lwc:if={item.isTask} label="Done" icon-name="utility:check"
+                                        data-id={item.recordId} onclick={handleDone} disabled={busy}></lightning-button>
+                                    <lightning-button lwc:if={item.showCustomer} label="Open customer" icon-name="utility:user"
+                                        data-id={item.customerId} onclick={handleOpenCustomer}></lightning-button>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </section>
+            </template>
+        </div>
+    </lightning-card>
+</template>
